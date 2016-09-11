@@ -1,0 +1,59 @@
+<div class="row">
+	<div class="col-md-12">
+		<h2>Users</h2>   
+    </div>
+</div>
+<hr />
+<div class="row">
+	<div class="col-md-12">
+		<?php if($this->msgok):?>
+		<div class="alert alert-success alert-dismissable">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+			<?php echo $this->msgok?>
+		</div>
+		<?php endif;?>
+		<?php if($this->msgerr):?>
+		<div class="alert alert-danger alert-dismissable">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+			<?php echo $this->msgerr?>
+		</div>
+		<?php endif;?>
+		<div class="row">	
+			<div class="col-md-12">
+			<div style="padding-bottom: 20px;">
+			</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+		            	List
+		            </div>
+		            <div class="panel-body">
+		            	<div class="table-responsive">
+		                	<table class="table table-striped table-bordered table-hover" id="dataTables-example">
+		                    	<thead>
+		                        	<tr>
+		                                <th>Full Name</th>
+		                                <th>Phone</th>
+		                                <th>E-Mail</th>
+		                            </tr>
+		                        </thead>
+								<tbody>
+									<?php foreach($this->usuarios as $usuario): ?>
+									<tr>
+										<td class="first style1"><?php echo $usuario['usrName'] . ' ' . $usuario['usrLastName']  ?></td>
+										<td><?php echo $usuario['usrPhone']?></td>
+										<td><?php echo $usuario['usrEmail']?></td>
+									</tr>
+									<?php endforeach; ?>                                    
+								</tbody>
+							</table>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>

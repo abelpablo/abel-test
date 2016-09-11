@@ -1,0 +1,21 @@
+<?php
+$usrLogin = $this->usrLogin;
+if($usrLogin){
+?>
+<h2>Esta logueado como "<?php echo $usrLogin?>"</h2>
+<a href="<?php echo $this->url(array('controller'=>'index', 'action'=>'logout')); ?>">Cerrar sesion</a>
+<?php 
+}else{
+?>
+<form action="" method="post">
+	<div class="form-group">
+		<label for="exampleInputEmail1">Usuario</label> 
+		<input type="text" class="form-control" name="usrUsuario" placeholder="Usuario">
+	</div>
+	<div class="form-group">
+		<label for="exampleInputPassword1">Contrase&ntilde;a</label>
+		 <input type="password" class="form-control" name="usrPassword" placeholder="Contrase&ntilde;a">
+	</div>
+	<button type="submit" class="btn btn-primary ">Entrar</button>
+</form>
+<?php }?>
